@@ -43,6 +43,12 @@ const Books = () => {
     setBooks([...books, book]);
   };
 
+  const handleEditBook = (updatedBook) => {
+    setBooks((prevBooks) =>
+      prevBooks.map((book) => (book.id === updatedBook.id ? updatedBook : book))
+    );
+  };
+
   return (
     <Container className="my-4">
       <h2>Book List</h2>
@@ -109,6 +115,7 @@ const Books = () => {
         show={showEditModal}
         handleClose={() => setShowEditModal(false)}
         book={selectedBook}
+        handleEdit={handleEditBook}
       />
     </Container>
   );

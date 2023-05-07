@@ -7,7 +7,9 @@ const EditBookModal = ({ show, handleClose, handleEdit, book }) => {
     title: "",
     author: "",
     price: 0,
-    category: 0,
+    category_id: 0,
+    desc: "",
+    total_pages: 0,
   });
   const [categories, setCategories] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,7 +23,9 @@ const EditBookModal = ({ show, handleClose, handleEdit, book }) => {
           title: book.title || "",
           author: book.author || "",
           price: book.price || 0,
-          category: book.category.id || 0,
+          category_id: book.category.id || 0,
+          desc: book.desc || "",
+          total_pages: book.total_pages || 0,
         });
       setLoading(false);
     };
@@ -41,6 +45,7 @@ const EditBookModal = ({ show, handleClose, handleEdit, book }) => {
     e.preventDefault();
     try {
       const res = await axios.put(`/api/books/${book.id}`, bookData);
+      console.log(bookData);
       handleEdit(res.data);
       handleClose();
     } catch (error) {
@@ -74,6 +79,26 @@ const EditBookModal = ({ show, handleClose, handleEdit, book }) => {
             />
           </Form.Group>
           <Form.Group className="mb-2">
+            <Form.Label>Description</Form.Label>
+            <Form.Control
+              type="text"
+              as="textarea"
+              rows={4}
+              name="desc"
+              value={bookData.desc}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2">
+            <Form.Label>Total Pages</Form.Label>
+            <Form.Control
+              type="number"
+              name="total_pages"
+              value={bookData.total_pages}
+              onChange={handleChange}
+            />
+          </Form.Group>
+          <Form.Group className="mb-2">
             <Form.Label>Price</Form.Label>
             <Form.Control
               type="number"
@@ -88,8 +113,8 @@ const EditBookModal = ({ show, handleClose, handleEdit, book }) => {
               <div>Loading Categories...</div>
             ) : (
               <Form.Select
-                name="category"
-                value={bookData.category}
+                name="category_id"
+                value={bookData.category_id}
                 onChange={handleChange}
               >
                 {categories.map((category) => (
