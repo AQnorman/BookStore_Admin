@@ -1,8 +1,9 @@
-.offcanvas-start {
-  background-color: #2e2e2e !important;
+/* .offcanvas-start {
+  background-color: #3d0066 !important;
   color: white !important;
-}
+} */
 
 .offcanvas-header {
-  background-color: #202020 !important;
+  background-color: #3d0066 !important;
+  color: white;
 }

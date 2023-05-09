@@ -34,7 +34,12 @@ const SideBar = () => {
 
   return (
     <>
-      <Navbar className="shadow-sm" bg="dark" variant="dark" expand={false}>
+      <Navbar
+        className="shadow-sm"
+        variant="dark"
+        expand={false}
+        style={{ backgroundColor: "#3d0066" }}
+      >
         <Container>
           <Navbar.Toggle onClick={handleShow}>
             <HiOutlineMenu size={25} color="white" />
@@ -48,11 +53,11 @@ const SideBar = () => {
           </Navbar.Brand>
 
           {getCookie("loggedIn") ? (
-            <Button variant="secondary" onClick={handleLogout}>
+            <Button variant="warning" onClick={handleLogout}>
               Logout
             </Button>
           ) : (
-            <Button variant="secondary" onClick={handleLoginShow}>
+            <Button variant="warning" onClick={handleLoginShow}>
               Login
             </Button>
           )}

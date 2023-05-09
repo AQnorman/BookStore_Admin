@@ -42,6 +42,12 @@ const Categories = () => {
     setCategories([...categories, category]);
   };
 
+  const handleEditCategory = (updatedCat) => {
+    setCategories((prevCats) =>
+      prevCats.map((cat) => (cat.id === updatedCat.id ? updatedCat : cat))
+    );
+  };
+
   return (
     <Container className="my-4">
       <h2>Category List</h2>
@@ -89,6 +95,7 @@ const Categories = () => {
         show={showEditModal}
         handleClose={() => setShowEditModal(false)}
         category={selectedCategory}
+        handleEdit={handleEditCategory}
       />
     </Container>
   );
