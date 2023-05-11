@@ -20,7 +20,7 @@ const Users = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>Username</th>
             <th>Email</th>
           </tr>
@@ -28,7 +28,7 @@ const Users = () => {
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td>{user.id}</td>
+              {/* <td>{user.id}</td> */}
               <td>{user.username}</td>
               <td>{user.email}</td>
             </tr>

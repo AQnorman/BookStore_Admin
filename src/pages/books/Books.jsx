@@ -55,7 +55,7 @@ const Books = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>Title</th>
             <th>Author</th>
             <th>Category</th>
@@ -69,7 +69,7 @@ const Books = () => {
           ) : (
             books.map((book) => (
               <tr key={book.id}>
-                <td>{book.id}</td>
+                {/* <td>{book.id}</td> */}
                 <td>{book.title}</td>
                 <td>{book.author}</td>
                 <td>{book.category.category}</td>

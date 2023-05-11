@@ -54,7 +54,7 @@ const Categories = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>ID</th>
+            {/* <th>ID</th> */}
             <th>Category</th>
             <th>Actions</th>
           </tr>
@@ -62,7 +62,7 @@ const Categories = () => {
         <tbody>
           {categories.map((category) => (
             <tr key={category.id}>
-              <td>{category.id}</td>
+              {/* <td>{category.id}</td> */}
               <td>{category.category}</td>
               <td>
                 <Button

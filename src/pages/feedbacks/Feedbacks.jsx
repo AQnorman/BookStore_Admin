@@ -31,7 +31,7 @@ const Feedbacks = () => {
       <Table striped bordered hover>
         <thead>
           <tr>
-            <th>User ID</th>
+            {/* <th>User ID</th> */}
             <th>Feedback</th>
             <th>Name</th>
             <th>Actions</th>
@@ -40,7 +40,7 @@ const Feedbacks = () => {
         <tbody>
           {feedbacks.map((feedback) => (
             <tr key={feedback.id}>
-              <td>{feedback.user.id}</td>
+              {/* <td>{feedback.user.id}</td> */}
               <td>{feedback.feedback}</td>
               <td>{feedback.user.username}</td>
               <td>
